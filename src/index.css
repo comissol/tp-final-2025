@@ -78,7 +78,7 @@ div.historial {
     padding-top: 20px;
     text-align: center;
     font-size: large;
-    color: aliceblue;
+    color: blueviolet !important;
 }
 .resultado{
     padding-top: 25px;

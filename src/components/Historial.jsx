@@ -1,7 +1,7 @@
 export default function Historial({ historial }) {
 
 
-  if (historial.length === 0) return <p>No hay historial aún.</p>;
+  if (historial.length === 0) return <p className="historial">No hay historial aún.</p>;
 
   return (
     <table className="historial">
