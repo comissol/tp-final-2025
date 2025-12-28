@@ -3,6 +3,7 @@ import Formulario from "../components/Formulario";
 import Resultado from "../components/Resultado";
 import { calcularPoliza } from "../utils/CalcularPoliza";
 import { Link } from "react-router-dom";
+import datos from '../data/datos.json'
 
 export default function CotizadorPag() {
 
@@ -39,10 +40,18 @@ const costoM2 = 351.86;
   };
 
   const guardarHistorial = () => {
+    const propiedadTexto = datos.find(
+      d => d.categoria === "propiedad" && d.factor === Number(form.propiedad)
+      )?.tipo;
+
+    const ubicacionTexto = datos.find(
+      d => d.categoria === "ubicacion" && d.factor === Number(form.ubicacion)
+      )?.tipo;
+
     const nuevaCotizacion = {
       fechaCotizacion: new Date().toLocaleString(),
-      propiedad: form.propiedad,
-      ubicacion: form.ubicacion,
+      propiedad: propiedadTexto,
+      ubicacion: ubicacionTexto,
       metros2: form.metros2,
       poliza: resultado
     };
